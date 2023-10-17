@@ -59,7 +59,6 @@ function init() {
   //     左窓
   mesh = new THREE.Mesh(new myTriangleGeometry( v[0], v[1], v[2]), glassMaterial);
   car.add(mesh);
-  mesh = new THREE.Mesh(new myTriangleGeometry( v[1], v[3], v[2]), glassMaterial);
   //     右窓
 
   //     前窓
@@ -71,7 +70,7 @@ function init() {
   const tyreW = 0.5;
   mesh = new THREE.Mesh(new THREE.CylinderGeometry(tyreR, tyreR, tyreW, 16, 1 ), tyreMaterial);
   mesh.rotation.z = Math.PI/2;
-  mesh.position.set(1.8, -1.5, 3);
+  mesh.position.set(carW/2, -carH, 3/8*carL);
   car.add(mesh);
   // 高さの調整
   
@@ -91,7 +90,7 @@ function init() {
   // 光源の設定
   const light1 = new THREE.SpotLight();
   light1.position.set(0, 70, -3);
-  scene.add(light1);
+  scenn
   
   // カメラの設定
   const camera = new THREE.PerspectiveCamera(
