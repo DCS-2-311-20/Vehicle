@@ -1,11 +1,11 @@
 //
-// 応用プログラミング 第4回 課題2 (ap0402)
+// 応用プログラミング 第4回 課題2 (ap0302)
 // G184002021 拓殖太郎
 //
 "use strict"; // 厳格モード
 
 import * as THREE from 'three';
-import GUI from 'gui';
+import GUI from 'ili-gui';
 import { myTriangleGeometry } from './myTriangleGeometry.js'
 
 // ３Ｄページ作成関数の定義
@@ -88,10 +88,11 @@ function init() {
   scene.add(plane);
 
   // 光源の設定
-  const light1 = new THREE.SpotLight();
+  const light1 = new THREE.SpotLight(0xffffff, 20000);
   light1.position.set(0, 70, -3);
-  scenn
-  
+  light1.castShadow = true;
+  scene.add(light1);
+    
   // カメラの設定
   const camera = new THREE.PerspectiveCamera(
     param.fov, window.innerWidth/window.innerHeight, 0.1, 1000);
