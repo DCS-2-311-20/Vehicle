@@ -90,7 +90,6 @@ function init() {
   // 光源の設定
   const light1 = new THREE.SpotLight(0xffffff, 20000);
   light1.position.set(0, 70, -3);
-  light1.castShadow = true;
   scene.add(light1);
     
   // カメラの設定
